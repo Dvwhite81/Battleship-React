@@ -1,0 +1,20 @@
+#left-message-div,
+#right-message-div {
+    position: absolute;
+    text-align: center;
+    top: 1rem;
+    width: 50vw;
+}
+
+#left-message-div h2,
+#right-message-div h2 {
+  margin-bottom: 1rem;
+}
+
+#left-message-div {
+    left: 0;
+}
+
+#right-message-div {
+  right: 0;
+}

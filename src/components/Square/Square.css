@@ -5,7 +5,7 @@
   width: var(--square-size);
 }
 
-.game-square {
+#computer-board .square {
   cursor: pointer;
 }
 
