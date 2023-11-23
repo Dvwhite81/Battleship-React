@@ -1,0 +1,60 @@
+#intro-container {
+  border-radius: 50px;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+  height: 60vh;
+  margin: auto;
+  padding: 2rem 1rem 0;
+  position: relative;
+  row-gap: 2rem;
+  text-align: center;
+  width: 60vw;
+}
+
+#intro-container::before {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50px;
+  bottom: 0;
+  content: '';
+  height: 60vh;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60vw;
+}
+
+#current-step {
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+  height: 15rem;
+  padding-top: 1rem;
+}
+
+#get-name {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+#name-input {
+  font-size: large;
+  margin: 0 auto;
+  width: 50%;
+}
+
+#start-btn,
+#next-btn {
+  border-radius: 10px;
+  font-size: large;
+  margin: auto auto 0;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+}
+
+#intro-container * {
+  z-index: 1;
+}

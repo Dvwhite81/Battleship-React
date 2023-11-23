@@ -1,0 +1,7 @@
+#phase-one-container {
+  background: url("../../../images/water2.jpg");
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}

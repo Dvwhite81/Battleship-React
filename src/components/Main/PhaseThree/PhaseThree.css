@@ -1,0 +1,40 @@
+#phase-three-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+#message-div {
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+#phase-three-boards {
+    display: flex;
+    height: 90vh;
+    justify-content: space-around;
+}
+
+#phase-three-boards .board {
+  max-height: 60vh;
+  max-width: 60vh;
+}
+
+#phase-three-boards .square {
+  display: grid;
+  grid-template-rows: 1fr;
+  max-height: 6vh;
+  max-width: 6vh;
+}
+
+#phase-three-boards .horizontal-img {
+  max-height: 6vh;
+}
+
+#phase-three-boards .vertical-img {
+    max-width: 6vh;
+}

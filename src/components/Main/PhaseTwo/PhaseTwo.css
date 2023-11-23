@@ -1,0 +1,6 @@
+#phase-two-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 100vh;
+  width: 100vw;
+}
