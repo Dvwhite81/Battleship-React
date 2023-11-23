@@ -1,0 +1,61 @@
+#help-btn {
+  border-radius: 4rem;
+  bottom: 1rem;
+  cursor: pointer;
+  font-size: larger;
+  height: 4rem;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  width: 4rem;
+}
+
+#help-btn:hover {
+  background-color: black;
+  color: lightgray;
+}
+
+#myModal {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50px;
+  color: white;
+  display: none;
+  font-size: x-large;
+  height: 60%;
+  left: 50%;
+  top: 50%;
+  overflow: auto;
+  position: fixed;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  z-index: 1;
+}
+
+#modal-text {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 80%;
+}
+
+#close-modal {
+  border-radius: 50%;
+  color: black;
+  font-size: 28px;
+  font-weight: bold;
+  height: var(--square-size);
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: var(--square-size);
+}
+
+#close-modal:hover,
+#close-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -16,9 +16,11 @@ function Main() {
   const [isPhaseFour, setIsPhaseFour] = useState(false);
   const [gameIsOver, setGameIsOver] = useState(false);
   const [playerName, setPlayerName] = useState('Captain');
+  const [playerBoard, setPlayerBoard] = useState(null);
+  const [savedBoard, setSavedBoard] = useState(null);
 
   const player = Player(playerName);
-  const playerBoard = Gameboard();
+  const placeholderBoard = Gameboard();
   const bot = Computer();
   const botBoard = Gameboard();
   const botShips = bot.makeAllShips();
@@ -42,13 +44,14 @@ function Main() {
         <PhaseTwo
           setFalse={setIsPhaseTwo}
           setTrue={setIsPhaseThree}
-          playerBoard={playerBoard}
-          player={player}
-          playerName={playerName}
+          board={placeholderBoard}
+          setPlayerBoard={setPlayerBoard}
+          setSavedBoard={setSavedBoard}
         />
       );
     }
-    if (isPhaseThree)
+    if (isPhaseThree) {
+      console.log('isPhaseThree');
       return (
         <PhaseThree
           setFalse={setIsPhaseThree}
@@ -57,8 +60,10 @@ function Main() {
           playerBoard={playerBoard}
           bot={bot}
           botBoard={botBoard}
+          savedBoard={savedBoard}
         />
       );
+    }
     if (isPhaseFour)
       return (
         <PhaseFour

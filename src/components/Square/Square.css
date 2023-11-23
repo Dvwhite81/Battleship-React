@@ -1,0 +1,57 @@
+.square {
+  background-color: transparent;
+  border: 1px solid lightgray;
+  height: var(--square-size);
+  width: var(--square-size);
+}
+
+.game-square {
+  cursor: pointer;
+}
+
+.active-hover {
+  background-color: white;
+}
+
+.miss,
+.hit {
+  grid-row: 1;
+  height: 70%;
+  margin: auto;
+  width: 70%;
+}
+
+.miss {
+  background: url('../../images/miss-mark.png');
+  background-size: contain;
+}
+
+.hit {
+  background: url('../../images/hit-mark.png');
+  background-size: contain;
+}
+
+.horizontal-img {
+  height: 4vw;
+}
+
+.vertical-img {
+  width: var(--square-size);
+}
+
+.vertical-carrier-img {
+  height: calc(--square-size * 5);
+}
+
+.vertical-battleship-img {
+  height: calc(--square-size * 4);
+}
+
+.vertical-destroyer-img,
+.vertical-submarine-img {
+  height: calc(--square-size * 3);
+}
+
+.vertical-patrolboat-img {
+  height: calc(--square-size * 2);
+}

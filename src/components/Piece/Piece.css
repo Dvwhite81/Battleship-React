@@ -1,0 +1,65 @@
+.piece {
+    background-color: grey;
+    justify-self: center;
+  }
+
+  .occupied {
+    background-color: transparent;
+    border: none;
+  }
+
+  #vertical-carrier {
+    grid-column: 3;
+    grid-row: 1 / 3;
+  }
+
+  /* Images for ships */
+  #horizontal-carrier {
+    background: url('../../images/carrier-real.png');
+    background-size: contain;
+  }
+
+  #horizontal-battleship {
+    background: url('../../images/battleship-real.png');
+    background-size: contain;
+  }
+
+  #horizontal-destroyer {
+    background: url('../../images/destroyer-real.png');
+    background-size: contain;
+  }
+
+  #horizontal-submarine {
+    background: url('../../images/submarine-real.png');
+    background-size: contain;
+  }
+
+  #horizontal-patrolboat {
+    background: url('../../images/patrolboat-real.png');
+    background-size: contain;
+  }
+
+  #vertical-carrier {
+    background: url('../../images/carrier-real-v.png');
+    background-size: contain;
+  }
+
+  #vertical-battleship {
+    background: url('../../images/battleship-real-v.png');
+    background-size: contain;
+  }
+
+  #vertical-destroyer {
+    background: url('../../images/destroyer-real-v.png');
+    background-size: contain;
+  }
+
+  #vertical-submarine {
+    background: url('../../images/submarine-real-v.png');
+    background-size: contain;
+  }
+
+  #vertical-patrolboat {
+    background: url('../../images/patrolboat-real-v.png');
+    background-size: contain;
+  }

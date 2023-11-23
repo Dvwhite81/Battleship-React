@@ -1,0 +1,20 @@
+#left-container, #right-container {
+  align-items: center;
+  background-color: darkgray;
+  display: grid;
+  height: var(--board-size);
+  justify-content: center;
+  justify-items: center;
+  margin: auto 0;
+  width: 30vw;
+}
+
+#left-container {
+grid-column: 1;
+}
+
+#right-container {
+grid-column: 3;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(2, 1fr);
+}

@@ -1,0 +1,11 @@
+.board {
+  background: url("../../images/water2.jpg");
+  background-size: cover;
+  display: grid;
+  grid-column: 2;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  height: var(--board-size);
+  margin: auto 0;
+  width: var(--board-size);
+}
