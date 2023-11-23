@@ -2,7 +2,6 @@ import { useState } from 'react';
 import PhaseOne from './PhaseOne/PhaseOne';
 import PhaseTwo from './PhaseTwo/PhaseTwo';
 import PhaseThree from './PhaseThree/PhaseThree';
-import PhaseFour from './PhaseFour/PhaseFour';
 import GameOver from './GameOver/GameOver';
 import Thanks from './Thanks/Thanks';
 import Player from '../../scripts/Factories/Player';
@@ -13,11 +12,11 @@ function Main() {
   const [isPhaseOne, setIsPhaseOne] = useState(true);
   const [isPhaseTwo, setIsPhaseTwo] = useState(false);
   const [isPhaseThree, setIsPhaseThree] = useState(false);
-  const [isPhaseFour, setIsPhaseFour] = useState(false);
   const [gameIsOver, setGameIsOver] = useState(false);
   const [playerName, setPlayerName] = useState('Captain');
   const [playerBoard, setPlayerBoard] = useState(null);
   const [savedBoard, setSavedBoard] = useState(null);
+  const [winner, setWinner] = useState(null);
 
   const player = Player(playerName);
   const placeholderBoard = Gameboard();
@@ -55,7 +54,8 @@ function Main() {
       return (
         <PhaseThree
           setFalse={setIsPhaseThree}
-          setTrue={setIsPhaseFour}
+          setTrue={gameIsOver}
+          setWinner={setWinner}
           player={player}
           playerBoard={playerBoard}
           bot={bot}
@@ -64,16 +64,14 @@ function Main() {
         />
       );
     }
-    if (isPhaseFour)
-      return (
-        <PhaseFour
-          setFalse={setIsPhaseFour}
-          setTrue={setGameIsOver}
-        />
-      );
     if (gameIsOver)
       return (
-        <GameOver setFalse={setGameIsOver} setTrue={setIsPhaseTwo} />
+        // To play again - set both. To end - only setFalse?
+        <GameOver
+          setFalse={setGameIsOver}
+          setTrue={setIsPhaseTwo}
+          winner={winner}
+        />
       );
     return <Thanks />;
   };

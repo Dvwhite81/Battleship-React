@@ -1,25 +1,67 @@
+import { useState } from 'react';
 import HelpButton from '../../Help/HelpButton';
 import HelpModal from '../../Help/HelpModal';
 import Message from '../../Message/Message';
 import PlayerBoard from '../../PlayerBoard/PlayerBoard';
 import ComputerBoard from '../../ComputerBoard/ComputerBoard';
-import playGame from '../GameProcess';
+import {
+  getInfo,
+  applyAttack,
+  botAttack,
+} from '../gameProcessHelpers';
 import './PhaseThree.css';
 
 function PhaseThree({
   setFalse,
   setTrue,
-  attackMessageLeft,
-  sunkMessageLeft,
-  attackMessageRight,
-  sunkMessageRight,
+  setWinner,
   player,
   playerBoard,
   bot,
   botBoard,
   savedBoard,
 }) {
-  playGame(setFalse, setTrue, player, playerBoard, bot, botBoard);
+  const [gameOver, setGameOver] = useState(false);
+  const [attackMessageLeft, setAttackMessageLeft] = useState('');
+  const [sunkMessageLeft, setSunkMessageLeft] = useState('');
+  const [attackMessageRight, setAttackMessageRight] = useState('');
+  const [sunkMessageRight, setSunkMessageRight] = useState('');
+  const [playerTurn, setPlayerTurn] = useState(true);
+
+  if (gameOver) {
+    console.log('PhaseThree gameOver');
+    setTrue(true);
+    setFalse(false);
+    setWinner();
+  }
+
+  const handleClick = (e) => {
+    console.log('handleClick');
+    e.preventDefault();
+    const { target } = e;
+    const { coords, square, isEmpty } = getInfo(target, botBoard);
+    applyAttack(
+      '#computer-board',
+      botBoard,
+      coords,
+      square,
+      isEmpty,
+      setAttackMessageRight,
+      setSunkMessageRight,
+      setGameOver,
+      true,
+    );
+    /*
+    botAttack(
+      bot,
+      playerBoard,
+      setAttackMessageLeft,
+      setSunkMessageLeft,
+      setGameOver,
+    );
+    */
+  };
+
   return (
     <div id="phase-three-container">
       <HelpButton phase="three" />
@@ -36,7 +78,7 @@ function PhaseThree({
       />
       <div id="phase-three-boards">
         <PlayerBoard savedBoard={savedBoard} />
-        <ComputerBoard />
+        <ComputerBoard handleClick={handleClick} />
       </div>
     </div>
   );

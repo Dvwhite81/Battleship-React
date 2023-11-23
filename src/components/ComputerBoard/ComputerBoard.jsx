@@ -1,7 +1,7 @@
 import makeEmptySquares from './computerBoardHelpers';
 
-function ComputerBoard() {
-  const squares = makeEmptySquares();
+function ComputerBoard({ handleClick }) {
+  const squares = makeEmptySquares(handleClick);
   return (
     <div id="computer-board" className="board">
       {squares}
