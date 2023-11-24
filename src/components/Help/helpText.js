@@ -5,6 +5,13 @@ const phaseTwoText = (isError) => {
   return phaseTwoHelpText();
 };
 
+const phaseThreeText = (isError) => {
+  if (isError) {
+    return attackOnAttackedText();
+  }
+  return phaseThreeHelpText();
+};
+
 const phaseTwoHelpText = () => {
   return (
     <div id="modal-text">
@@ -37,7 +44,21 @@ const dropOnOccupiedText = () => {
   );
 };
 
-const phaseThreeText = () => {
+const attackOnAttackedText = () => {
+  return (
+    <div id="modal-text">
+      <h2>You can't attack there!</h2>
+      <h4>
+        Any square that has a dot has already been attacked.
+        <br />
+        Try clicking on an empty space!
+      </h4>
+      <h4>Remember, if a ship isn't sunk, click next to red dots!</h4>
+    </div>
+  );
+};
+
+const phaseThreeHelpText = () => {
   return (
     <div id="modal-text">
       <h2>The board on the right is the computer's board</h2>

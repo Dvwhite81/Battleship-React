@@ -52,7 +52,6 @@ const Gameboard = (() => {
     };
 
     const hitShip = (coords) => {
-      console.log('hitShip');
       ships.forEach((ship) => {
         if (JSON.stringify(ship.getShipCoords()).includes(coords)) {
           const index = getSpace([
@@ -65,7 +64,6 @@ const Gameboard = (() => {
     };
 
     const receiveAttack = (coords) => {
-      console.log('receiveAttack');
       if (isEmptySingle(coords)) {
         missedAttacks.push(coords);
       } else {

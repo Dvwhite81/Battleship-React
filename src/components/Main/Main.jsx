@@ -12,7 +12,7 @@ function Main() {
   const [isPhaseOne, setIsPhaseOne] = useState(true);
   const [isPhaseTwo, setIsPhaseTwo] = useState(false);
   const [isPhaseThree, setIsPhaseThree] = useState(false);
-  const [gameIsOver, setGameIsOver] = useState(false);
+  const [isPhaseFour, setIsPhaseFour] = useState(false);
   const [playerName, setPlayerName] = useState('Captain');
   const [playerBoard, setPlayerBoard] = useState(null);
   const [savedBoard, setSavedBoard] = useState(null);
@@ -26,9 +26,7 @@ function Main() {
   botBoard.placeAllShips(botShips);
 
   const renderPhase = () => {
-    console.log('renderPhase');
     if (isPhaseOne) {
-      console.log('isPhaseOne');
       return (
         <PhaseOne
           setFalse={setIsPhaseOne}
@@ -38,7 +36,6 @@ function Main() {
       );
     }
     if (isPhaseTwo) {
-      console.log('isPhaseTwo');
       return (
         <PhaseTwo
           setFalse={setIsPhaseTwo}
@@ -50,11 +47,10 @@ function Main() {
       );
     }
     if (isPhaseThree) {
-      console.log('isPhaseThree');
       return (
         <PhaseThree
           setFalse={setIsPhaseThree}
-          setTrue={gameIsOver}
+          setTrue={setIsPhaseFour}
           setWinner={setWinner}
           player={player}
           playerBoard={playerBoard}
@@ -64,11 +60,10 @@ function Main() {
         />
       );
     }
-    if (gameIsOver)
+    if (isPhaseFour)
       return (
-        // To play again - set both. To end - only setFalse?
         <GameOver
-          setFalse={setGameIsOver}
+          setFalse={setIsPhaseFour}
           setTrue={setIsPhaseTwo}
           winner={winner}
         />

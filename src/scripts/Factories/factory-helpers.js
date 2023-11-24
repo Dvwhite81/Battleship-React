@@ -60,10 +60,12 @@ const calculateCoords = (startCoords, length, isVertical) => {
 };
 
 const noneOccupied = (coords, occupiedCoords) => {
+  occupiedCoords = JSON.stringify(occupiedCoords);
   let allEmpty = true;
 
   coords.forEach((coord) => {
-    if (occupiedCoords.includes(coord)) {
+    coord = JSON.stringify(coord);
+    if (occupiedCoords.indexOf(coord) !== -1) {
       allEmpty = false;
     }
   });

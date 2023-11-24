@@ -15,19 +15,23 @@
 
 .miss,
 .hit {
-  grid-row: 1;
-  height: 70%;
-  margin: auto;
-  width: 70%;
+  align-self: center;
+  display: flex;
+  height: calc(var(--square-size) * .5);
+  justify-self: center;
+  position: fixed;
+  width: calc(var(--square-size) * .5);
 }
 
 .miss {
   background: url('../../images/miss-mark.png');
+  background-repeat: no-repeat;
   background-size: contain;
 }
 
 .hit {
   background: url('../../images/hit-mark.png');
+  background-repeat: no-repeat;
   background-size: contain;
 }
 

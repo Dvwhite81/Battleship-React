@@ -1,0 +1,23 @@
+#game-over-container {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  margin: 25vh auto;
+  text-align: center;
+  width: 50%;
+}
+
+#game-over-btns {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem auto;
+  width: 50%;
+}
+
+#game-over-btns button {
+  border-radius: 4rem;
+  cursor: pointer;
+  font-size: larger;
+  height: 5rem;
+  width: 5rem;
+}

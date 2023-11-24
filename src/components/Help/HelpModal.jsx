@@ -11,7 +11,9 @@ function HelpModal({ phase, isError, setIsError }) {
       >
         ×
       </button>
-      {phase === 'two' ? phaseTwoText(isError) : phaseThreeText()}
+      {phase === 'two'
+        ? phaseTwoText(isError)
+        : phaseThreeText(isError)}
     </div>
   );
 }

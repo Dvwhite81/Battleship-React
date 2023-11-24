@@ -1,4 +1,3 @@
-import Player from './Player';
 import Ship from './Ship';
 import {
   calculateType,
@@ -9,11 +8,20 @@ import {
 
 const Computer = (() => {
   const createComputer = () => {
-    const { getName, getPreviousAttacks, takeTurn } =
-      Player('Computer');
+    const name = 'Computer';
+    const getName = () => name;
 
     const previousAttacks = [];
+    const getPreviousAttacks = () => previousAttacks;
+
     const occupiedCoords = [];
+
+    const takeTurn = (coords, opponentBoard) => {
+      if (!getPreviousAttacks().includes(coords)) {
+        previousAttacks.push(coords);
+        opponentBoard.receiveAttack(coords);
+      }
+    };
 
     const randomNumber = (num) => {
       return Math.floor(Math.random() * num);
@@ -30,11 +38,17 @@ const Computer = (() => {
       let coords;
       while (!found) {
         coords = getRandomCoords();
-        if (!previousAttacks.includes(coords)) {
+        if (notInPrevious(coords)) {
           found = true;
         }
       }
       return coords;
+    };
+
+    const notInPrevious = (coords) => {
+      const prev = JSON.stringify(previousAttacks);
+      const curr = JSON.stringify(coords);
+      return prev.indexOf(curr) === -1;
     };
 
     const attack = (opponentBoard) => {
@@ -49,6 +63,7 @@ const Computer = (() => {
       let startCoords;
       let direction;
       let isVertical;
+      let ship;
       while (!found) {
         direction = options[Math.random() >= 0.5 ? 1 : 0];
         isVertical = direction === 'vertical';
@@ -59,10 +74,9 @@ const Computer = (() => {
         if (path && noneOccupied(path, occupiedCoords)) {
           found = true;
           path.forEach((coord) => occupiedCoords.push(coord));
+          ship = Ship(shipName, startCoords, isVertical);
         }
       }
-
-      const ship = Ship(shipName, startCoords, isVertical);
       return ship;
     };
 
@@ -87,6 +101,7 @@ const Computer = (() => {
       getPreviousAttacks,
       attack,
       makeAllShips,
+      notInPrevious,
     };
   };
 

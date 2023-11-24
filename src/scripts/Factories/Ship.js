@@ -29,7 +29,6 @@ const Ship = (() => {
     const sinkShip = () => (sunk = true);
 
     const hit = (index) => {
-      console.log('hit');
       spacesArray[index] = true;
       timesHit += 1;
       if (checkSunk()) {
