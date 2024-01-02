@@ -4,13 +4,13 @@
   display: flex;
   flex-direction: column;
   font-size: larger;
-  height: 60vh;
+  height: 70vh;
   margin: auto;
   padding: 2rem 1rem 0;
   position: relative;
-  row-gap: 2rem;
+  row-gap: 1rem;
   text-align: center;
-  width: 60vw;
+  width: 80vw;
 }
 
 #intro-container::before {
@@ -18,19 +18,18 @@
   border-radius: 50px;
   bottom: 0;
   content: '';
-  height: 60vh;
+  height: 70vh;
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
-  width: 60vw;
+  width: 80vw;
 }
 
 #current-step {
   display: flex;
   flex-direction: column;
   font-size: larger;
-  height: 15rem;
   padding-top: 1rem;
 }
 
@@ -49,8 +48,9 @@
 #start-btn,
 #next-btn {
   border-radius: 10px;
+  cursor: pointer;
   font-size: large;
-  margin: auto auto 0;
+  margin: 1rem auto 0;
   padding: 0.5rem 1rem;
   width: fit-content;
 }

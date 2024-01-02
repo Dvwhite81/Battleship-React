@@ -20,7 +20,7 @@
   border-radius: 50px;
   color: white;
   display: none;
-  font-size: x-large;
+  font-size: large;
   height: 60%;
   left: 50%;
   top: 50%;
@@ -44,7 +44,7 @@
 #close-modal {
   border-radius: 50%;
   color: black;
-  font-size: 28px;
+  font-size: large;
   font-weight: bold;
   height: var(--square-size);
   position: absolute;
@@ -55,7 +55,8 @@
 
 #close-modal:hover,
 #close-modal:focus {
-  color: black;
+  background-color: black;
+  color: white;
   text-decoration: none;
   cursor: pointer;
 }
